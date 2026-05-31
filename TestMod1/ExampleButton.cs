@@ -38,7 +38,7 @@ public class ExampleButton : CustomActionButton//<PlayerControl>
     {
         Vector2 mouseWorld = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         // System.Console.WriteLine(mouseWorld);
-        GameObject TestObj = new GameObject();
+        GameObject TestObj = UnityEngine.Object.Instantiate(ExampleAssets.MyPrefab.LoadAsset());
         TestObj.name = "TestObj";
         TestObj.transform.position = mouseWorld;
     }

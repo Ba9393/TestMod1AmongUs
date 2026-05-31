@@ -10,3 +10,4 @@ C:\Users\ba\Desktop\workpls\TestMod1\TestMod1\obj\Debug\net6.0\refint\TestMod1.d
 C:\Users\ba\Desktop\workpls\TestMod1\TestMod1\obj\Debug\net6.0\ref\TestMod1.dll
 C:\Users\ba\Desktop\workpls\TestMod1\TestMod1\bin\Debug\net6.0\MiraAPI.dll
 C:\Users\ba\Desktop\workpls\TestMod1\TestMod1\obj\Debug\net6.0\TestMod1.csproj.Up2Date
+C:\Users\ba\Desktop\workpls\TestMod1\TestMod1\obj\Debug\net6.0\TestMod1.sourcelink.json
