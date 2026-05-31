@@ -14,7 +14,7 @@ public class ExploderRole : ImpostorRole, ICustomRole
     public CustomRoleConfiguration Configuration => new CustomRoleConfiguration(this)
     {
         MaxRoleCount = 15,
-        DefaultRoleCount = 2,
+        DefaultRoleCount = 1,
         DefaultChance = 80,
         UseVanillaKillButton = false
     };
