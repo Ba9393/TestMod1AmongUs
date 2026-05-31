@@ -5,6 +5,8 @@ using MiraAPI.Utilities.Assets;
 using Mono.Cecil;
 using Rewired;
 using UnityEngine;
+using UnityEngine.ResourceManagement.ResourceProviders;
+using UnityEngine.SceneManagement;
 
 namespace TestMod1;
 
@@ -35,6 +37,9 @@ public class ExampleButton : CustomActionButton//<PlayerControl>
     protected override void OnClick()
     {
         Vector2 mouseWorld = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        System.Console.WriteLine(mouseWorld);
+        // System.Console.WriteLine(mouseWorld);
+        GameObject TestObj = new GameObject();
+        TestObj.name = "TestObj";
+        TestObj.transform.position = mouseWorld;
     }
 }
