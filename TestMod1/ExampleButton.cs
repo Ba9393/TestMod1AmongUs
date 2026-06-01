@@ -1,3 +1,4 @@
+using System.Threading;
 using MiraAPI.Hud;
 using MiraAPI.Keybinds;
 using MiraAPI.Utilities;
@@ -38,8 +39,19 @@ public class ExampleButton : CustomActionButton//<PlayerControl>
     {
         Vector2 mouseWorld = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         // System.Console.WriteLine(mouseWorld);
-        GameObject TestObj = UnityEngine.Object.Instantiate(ExampleAssets.MyPrefab.LoadAsset());
-        TestObj.name = "TestObj";
-        TestObj.transform.position = mouseWorld;
+
+        GameObject FallingBomb = UnityEngine.Object.Instantiate(ExampleAssets.MyPrefab.LoadAsset());
+        FallingBomb.name = "FallingBomb";
+        FallingBomb.transform.position = new Vector2(mouseWorld.x, mouseWorld.y + 10.0f);
+        
+        for (var i = 0f; i < 100f; i++) 
+        {
+            FallingBomb.transform.position -= new Vector3(0.0f, 0.1f);
+            // Thread.Sleep(100); doesnt work
+        }
+
+        //GameObject ExplosionAnim = UnityEngine.Object.Instantiate(ExampleAssets.MyPrefab.LoadAsset());
+        //ExplosionAnim.name = "ExplosionAnim";
+        //ExplosionAnim.transform.position = mouseWorld;
     }
 }

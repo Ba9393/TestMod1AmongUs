@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyDescriptionAttribute("Mod generated using Reactor Template")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0-dev+46854e087320e0142df5336d7b9ca853bebf25f0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0-dev+d496d03582bdd83f4eee118852007079085acb20")]
 [assembly: System.Reflection.AssemblyProductAttribute("TestMod1")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TestMod1")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
