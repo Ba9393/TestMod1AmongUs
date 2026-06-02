@@ -20,8 +20,8 @@ namespace TestMod1;
 public class ExampleButton : CustomActionButton//<PlayerControl>
 {
     public override string Name => "Bomb";
-    public override float Cooldown => 0.0f;
-    public override float InitialCooldown => 10.0f;
+    public override float Cooldown => 60.0f;
+    public override float InitialCooldown => 60.0f;
     public override LoadableAsset<Sprite> Sprite => ExampleAssets.ExampleButton;
     public override BaseKeybind Keybind => MiraGlobalKeybinds.PrimaryAbility;
     public override bool ZeroIsInfinite => true;
@@ -44,6 +44,7 @@ public class ExampleButton : CustomActionButton//<PlayerControl>
     protected override void OnClick()
     {
         Vector2 mouseWorld = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        mi_bobo.RpcRenderBomb(mouseWorld, PlayerControl.LocalPlayer);
+        System.Console.WriteLine("mouseWorld: " + mouseWorld);
+        mi_bobo.RpcRenderBomb(PlayerControl.LocalPlayer, mouseWorld, PlayerControl.LocalPlayer);
     }
 }

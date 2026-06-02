@@ -15,13 +15,9 @@ namespace TestMod1;
 
 public static class mi_bobo
 {
-    public enum CustomRpcCalls : uint
-    {
-        AbsoluteBalls = 0
-    }
-    
     public static IEnumerator KimJongUn(Vector2 mouseWorld, PlayerControl origin)
     {
+        System.Console.WriteLine("mouseWorld: " + mouseWorld + ", origin: " + origin + " so tuff innit bruv");
         bool isTheBomber = origin == PlayerControl.LocalPlayer;
         
         GameObject FallingBomb = UnityEngine.Object.Instantiate(ExampleAssets.MySecondPrefab.LoadAsset());
@@ -65,9 +61,15 @@ public static class mi_bobo
         ExplosionAnim.Destroy();
     }
     
-    [MethodRpc((uint) CustomRpcCalls.AbsoluteBalls)]
-    public static void RpcRenderBomb(Vector2 mouseWorld, PlayerControl origin)
+    public enum CustomRpcCalls : uint
     {
+        AbsoluteBalls
+    }
+    
+    [MethodRpc((uint) CustomRpcCalls.AbsoluteBalls)]
+    public static void RpcRenderBomb(this PlayerControl player, Vector2 mouseWorld, PlayerControl origin)
+    {
+        System.Console.WriteLine("mouseWorld: " + mouseWorld + ", origin: " + origin);
         Coroutines.Start(KimJongUn(mouseWorld, origin));
     }
 }
