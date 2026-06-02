@@ -1,1 +1,1 @@
-### balls (proper readme coming soon probably~~~~)
+### balls (proper readme coming soon probably)
