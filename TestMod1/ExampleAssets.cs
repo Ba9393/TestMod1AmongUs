@@ -20,4 +20,12 @@ public class ExampleAssets
 
     public static LoadableBundleAsset<Sprite> MySprite = new("ezgif.com-gif-to-sprite-converter_0.png", myBundle);
     public static LoadableBundleAsset<GameObject> MyPrefab = new("ezgif.com-gif-to-sprite-converter_0.prefab", myBundle);
+    
+    static AssetBundle mySecondBundle = AssetBundleManager.Load("dyna3bun");
+
+    public static LoadableBundleAsset<GameObject> MySecondPrefab = new("dyna3.prefab", mySecondBundle);
+    
+    static AssetBundle myThirdBundle = AssetBundleManager.Load("workpls");
+
+    public static LoadableBundleAsset<GameObject> MyThirdPrefab = new("spritesheet_0.prefab", myThirdBundle);
 }

@@ -1,9 +1,15 @@
+using System.Collections;
 using System.Threading;
+using System.Threading.Tasks;
+using Cpp2IL.Core;
 using MiraAPI.Hud;
 using MiraAPI.Keybinds;
+using MiraAPI.Networking;
 using MiraAPI.Utilities;
 using MiraAPI.Utilities.Assets;
 using Mono.Cecil;
+using Reactor.Utilities;
+using Reactor.Utilities.Extensions;
 using Rewired;
 using UnityEngine;
 using UnityEngine.ResourceManagement.ResourceProviders;
@@ -38,20 +44,6 @@ public class ExampleButton : CustomActionButton//<PlayerControl>
     protected override void OnClick()
     {
         Vector2 mouseWorld = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        // System.Console.WriteLine(mouseWorld);
-
-        GameObject FallingBomb = UnityEngine.Object.Instantiate(ExampleAssets.MyPrefab.LoadAsset());
-        FallingBomb.name = "FallingBomb";
-        FallingBomb.transform.position = new Vector2(mouseWorld.x, mouseWorld.y + 10.0f);
-        
-        for (var i = 0f; i < 100f; i++) 
-        {
-            FallingBomb.transform.position -= new Vector3(0.0f, 0.1f);
-            // Thread.Sleep(100); doesnt work
-        }
-
-        //GameObject ExplosionAnim = UnityEngine.Object.Instantiate(ExampleAssets.MyPrefab.LoadAsset());
-        //ExplosionAnim.name = "ExplosionAnim";
-        //ExplosionAnim.transform.position = mouseWorld;
+        mi_bobo.RpcRenderBomb(mouseWorld, PlayerControl.LocalPlayer);
     }
 }
