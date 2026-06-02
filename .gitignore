@@ -1,0 +1,7 @@
+.idea/
+obj/
+bin/
+.qodo/
+
+*.user
+*.lock.json
